@@ -9,6 +9,7 @@
 }
 
 :root {
+  --bg-color: rgba(0, 0, 0, 0.9);
   --link: rgb(23, 199, 199);
   --topics: rgb(149, 149, 212);
   --linear-gradient: radial-gradient(
@@ -24,7 +25,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background: rgba(0, 0, 0, 0.8);
+  background: var(--bg-color);
   display: grid;
   grid-gap: 1rem;
   grid-template-areas:
@@ -248,6 +249,7 @@ main span {
 
 .recent-posts a {
   font-size: 1.1rem;
+  text-decoration: 2px solid underline;
 }
 
 .line {
@@ -259,6 +261,9 @@ main span {
 
 footer > p {
   color: var(--topics);
+  margin-top: 1.2rem;
+  line-height: 0;
+  margin-bottom: 0;
 }
 
 .icons {
@@ -273,6 +278,12 @@ footer > p {
 .icons i {
   display: block;
   margin: 0 0.5rem;
+  cursor: pointer;
+  transition: color 0.7s ease-in-out;
+}
+
+.icons i:hover {
+  color: var(--hover);
 }
 
 .fa-bars {
@@ -288,16 +299,15 @@ footer > p {
     height: 4.5rem;
   }
   nav {
-    background: rgba(0, 0, 0, 0.8);
+    background: var(--topics);
     position: absolute;
-    top: 4.75rem;
-    right: 0;
+    top: 4.7rem;
+    left: 0;
     width: 10rem;
-    height: 11rem;
     display: none;
   }
 
-  nav.active {
+  .active {
     display: initial;
   }
 
@@ -320,11 +330,9 @@ footer > p {
   nav a {
     width: 100%;
     text-align: initial;
-    padding: 1.15rem 0.3rem;
-  }
-
-  nav a:active {
-    color: var(--hover);
+    padding: 0.7rem 0.3rem;
+    color: black;
+    font-size: 1.1rem;
   }
 
   .article {
@@ -350,14 +358,14 @@ footer > p {
     width: 100%;
   }
 
-  main span {
-    display: inline;
-  }
-
   section.company-info {
     width: 95%;
     justify-content: flex-start;
     margin-right: 0.5rem;
+  }
+
+  .article-featured span {
+    display: block;
   }
 
   .fa-bars {
