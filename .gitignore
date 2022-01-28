@@ -1,3 +1,5 @@
 /file.txt
 /node_modules/
 /netlify.toml
+# Local Netlify folder
+.netlify
