@@ -1,0 +1,482 @@
+@import url("./fonts.css");
+:root {
+  --blue-100: #ccccff;
+  --blue-200: #9999ff;
+  --blue-300: #6666ff;
+  --blue-400: #3333ff;
+  --blue-500: #0000ff;
+  --blue-600: #0000cc;
+  --blue-700: #000099;
+  --blue-800: #000066;
+  --blue-900: #000033;
+  --orange-100: #ffedcc;
+  --orange-200: #ffdb99;
+  --orange-300: #ffc966;
+  --orange-400: #ffb733;
+  --orange-500: #ffa500;
+  --orange-600: #cc8400;
+  --orange-700: #996300;
+  --orange-800: #664200;
+  --orange-900: #332100;
+  --grey-100: #f1f5f9;
+  --grey-200: #e2e8f0;
+  --grey-300: #cbd5e1;
+  --grey-400: #94a3b8;
+  --grey-500: #64748b;
+  --grey-600: #475569;
+  --grey-700: #334155;
+  --grey-800: #1e293b;
+  --grey-900: #0f172a;
+  --black: #000000;
+  --white: #ffffff;
+  --red-light: #f8d7da;
+  --red-dark: #842029;
+  --green-light: #d1e7dd;
+  --green-dark: #0f5132;
+  --heading-font: "Poppins", sans-serif;
+  --body-font: "PT Serif", serif;
+  --fs-h1: clamp(2.5rem, 1rem + 3.5vw, 3.5rem);
+  --fs-h2: clamp(2rem, 1rem + 3vw, 3rem);
+  --fs-p: clamp(1.5rem, 1rem + 1.7vw, 1.7rem);
+  --fs-xs: clamp(1rem, 1rem + 1.2vw, 1.2rem);
+  --bg-color: var(--grey-800);
+  --text-color: var(--grey-200);
+  --radius: 0.5rem;
+  --padding: 0.3rem 0.7rem;
+  --gap-xs: var(--fs-xs);
+  --gap-md: var(--fs-p);
+  --gap-lg: var(--fs-h1);
+  --transition3: 0.3s ease-in-out;
+  --transition5: 0.5s ease-in-out;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-padding-top: 2rem;
+}
+html:focus-within {
+  scroll-behavior: smooth;
+}
+@media (max-width: 300px) {
+  html {
+    font-size: 50%;
+  }
+}
+@media (max-width: 150px) {
+  html {
+    font-size: 30%;
+  }
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:focus {
+  outline: none;
+  border: none;
+}
+
+:focus-visible {
+  outline: 1px solid var(--blue-500);
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--body-font);
+  font-size: 1.6rem;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--gap-md);
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+input,
+textarea,
+select,
+button,
+label {
+  font: inherit;
+  display: block;
+  color: inherit;
+  cursor: pointer;
+}
+
+img,
+picture {
+  display: block;
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+}
+
+p,
+a {
+  font-size: var(--fs-p);
+}
+
+.wrapper {
+  width: min(95%, 1150px);
+  margin: 0 auto;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-md);
+}
+@media (min-width: 700px) {
+  .content-wrapper {
+    flex-direction: row;
+  }
+}
+
+.btn {
+  border-color: transparent;
+  border-radius: var(--radius);
+  background: var(--blue-300);
+  padding: var(--padding);
+  transition: all var(--transition3);
+  text-transform: uppercase;
+  font-size: var(--fs-p);
+}
+.btn:hover {
+  background: var(--blue-200);
+}
+
+.svg {
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: var(--radius);
+  transition: all var(--transition3);
+}
+.svg:not(.logo__icon, .times, .bars):hover {
+  color: var(--blue-300);
+  background: var(--grey-700);
+}
+.svg svg {
+  width: 100%;
+  height: 100%;
+  fill: var(--text-color);
+}
+
+.header {
+  background: var(--grey-900);
+}
+.header .wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap-xs);
+  padding: 0 1rem;
+  padding-top: var(--gap-xs);
+}
+@media (min-width: 700px) {
+  .header .wrapper {
+    padding-top: 0;
+    flex-direction: row;
+    padding: var(--gap-xs) 0;
+  }
+}
+.header li:last-child {
+  margin-bottom: var(--gap-xs);
+}
+@media (min-width: 700px) {
+  .header li:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.logo-and-nav-toggler {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (min-width: 700px) {
+  .logo-and-nav-toggler {
+    width: auto;
+    display: block;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-color);
+}
+
+.nav-toggler {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: var(--radius);
+  transition: all var(--transition3);
+}
+.nav-toggler:hover {
+  color: var(--blue-300);
+  background: var(--grey-700);
+}
+@media (min-width: 700px) {
+  .nav-toggler {
+    display: none;
+  }
+}
+
+.times {
+  display: none;
+}
+.times svg {
+  fill: var(--red-dark);
+}
+
+.header-nav {
+  height: 0;
+  overflow: hidden;
+  transition: height var(--transition5);
+}
+@media (min-width: 700px) {
+  .header-nav {
+    height: auto !important;
+  }
+}
+.header-nav__links {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 700px) {
+  .header-nav__links {
+    flex-direction: row;
+  }
+}
+.header-nav a {
+  padding: var(--gap-xs) 1rem;
+  color: var(--blue-500);
+  border-radius: var(--radius);
+  transition: all var(--transition3);
+  text-align: center;
+  text-transform: uppercase;
+}
+.header-nav a:hover {
+  color: var(--blue-300);
+  background: var(--grey-700);
+}
+@media (min-width: 700px) {
+  .header-nav a {
+    padding: 1rem var(--gap-xs);
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-lg);
+  background: var(--grey-900);
+  padding: 1rem;
+  border-radius: var(--radius);
+}
+.main a {
+  padding: 0.5rem;
+  color: var(--blue-500);
+  border-radius: var(--radius);
+  transition: all var(--transition3);
+  text-transform: uppercase;
+  align-self: flex-start;
+}
+.main a:hover {
+  color: var(--blue-300);
+  background: var(--grey-700);
+}
+
+.featured-primary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xs);
+}
+.featured-primary .article-image {
+  width: 100%;
+  height: 30%;
+}
+@media (min-width: 700px) {
+  .featured-primary .article-image {
+    height: 40rem;
+  }
+}
+
+.article-image {
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+.article-image img {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+.article-title {
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+.article-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xs);
+  align-items: center;
+}
+.article-info p {
+  font-size: var(--fs-xs);
+}
+@media (min-width: 700px) {
+  .article-info {
+    flex-direction: row;
+  }
+}
+
+.featured-secondary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-lg);
+}
+
+.article {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: var(--gap-xs);
+}
+@media (min-width: 700px) {
+  .article {
+    flex-direction: row-reverse;
+  }
+}
+.article .article-image {
+  width: 100%;
+  height: 15rem;
+}
+@media (min-width: 700px) {
+  .article .article-image {
+    width: 30rem;
+  }
+}
+.article .article-info {
+  flex-direction: column;
+  align-items: center;
+}
+
+.article-primary,
+.article-secondary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xs);
+}
+
+.comments {
+  color: var(--orange-500);
+}
+
+.aside,
+.recent-posts,
+.about-me,
+.recent-post {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xs);
+}
+
+.aside {
+  background: var(--grey-900);
+  padding: 1rem;
+  height: fit-content;
+  border-radius: var(--radius);
+  gap: var(--gap-lg);
+}
+.aside a {
+  width: fit-content;
+  padding: 0.5rem;
+  color: var(--blue-500);
+  border-radius: var(--radius);
+  transition: all var(--transition3);
+  text-transform: uppercase;
+  align-self: flex-start;
+}
+.aside a:hover {
+  color: var(--blue-300);
+  background: var(--grey-700);
+}
+
+.recent-post + .recent-post {
+  padding-top: 1rem;
+  border-top: 1px solid var(--orange-500);
+}
+
+.footer {
+  background: var(--grey-900);
+}
+.footer p {
+  font-size: var(--fs-xs);
+}
+
+.footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-xs);
+  padding: var(--gap-xs) 1rem;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-xs);
+}
+
+.cancel-active {
+  display: block;
+}
+
+.add-padding {
+  padding: var(--gap-xs) 0;
+}

@@ -1,0 +1,38 @@
+@use '../abstracts' as *;
+
+.aside,
+.recent-posts,
+.about-me,
+.recent-post {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xs);
+}
+
+.aside {
+  background: var(--grey-900);
+  padding: 1rem;
+  height: fit-content;
+  border-radius: var(--radius);
+  gap: var(--gap-lg);
+
+  a {
+    width: fit-content;
+    padding: $gap-xs;
+    color: var(--blue-500);
+    border-radius: var(--radius);
+    transition: all var(--transition3);
+    text-transform: uppercase;
+    align-self: flex-start;
+
+    &:hover {
+      color: var(--blue-300);
+      background: var(--grey-700);
+    }
+  }
+}
+
+.recent-post + .recent-post {
+  padding-top: $gap-md;
+  border-top: 1px solid var(--orange-500);
+}

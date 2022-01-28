@@ -1,0 +1,11 @@
+@use '../abstracts' as *;
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-md);
+
+  @include breakpoint() {
+    flex-direction: row;
+  }
+}

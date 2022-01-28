@@ -1,0 +1,23 @@
+@use '../abstracts' as *;
+
+.footer {
+  background: var(--grey-900);
+
+  p {
+    font-size: var(--fs-xs);
+  }
+}
+
+.footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-xs);
+  padding: var(--gap-xs) 1rem;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-xs);
+}

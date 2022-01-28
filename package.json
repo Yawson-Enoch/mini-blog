@@ -1,0 +1,23 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "template for a mini blog site",
+  "scripts": {
+    "ts": "tsc -w",
+    "scss": "sass -w --no-source-map src/scss/:dist/css/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yawson-Enoch/mini-blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yawson-Enoch/mini-blog/issues"
+  },
+  "homepage": "https://github.com/Yawson-Enoch/mini-blog#readme",
+  "devDependencies": {
+    "netlify-cli": "^8.14.1"
+  }
+}
