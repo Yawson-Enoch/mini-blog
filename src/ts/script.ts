@@ -5,7 +5,6 @@ const headerNavLinks = document.querySelector(
 const navToggler = document.querySelector('.nav-toggler') as HTMLDivElement;
 const cancelBtn = document.querySelector('.times') as HTMLDivElement;
 const hamburgerBtn = document.querySelector('.bars') as HTMLDivElement;
-const wrapper = document.querySelector('.header > .wrapper');
 
 let heightOfLinksContainer = headerNavLinks.getBoundingClientRect().height;
 
@@ -23,6 +22,5 @@ navToggler.addEventListener('click', () => {
   }
 });
 
-// set dynamic year
 const yearBox = document.querySelector('.year') as HTMLSpanElement;
 yearBox.innerText = new Date().getUTCFullYear().toString();
