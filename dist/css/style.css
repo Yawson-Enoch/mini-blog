@@ -351,7 +351,7 @@ a {
 }
 .article-image img {
   object-fit: cover;
-  object-position: center;
+  object-position: bottom;
   width: 100%;
   height: 100%;
 }
@@ -387,16 +387,16 @@ a {
   flex-direction: column-reverse;
   gap: var(--gap-xs);
 }
-@media (min-width: 700px) {
+@media (min-width: 1150px) {
   .article {
     flex-direction: row-reverse;
   }
 }
 .article .article-image {
   width: 100%;
-  height: 15rem;
+  height: auto;
 }
-@media (min-width: 700px) {
+@media (min-width: 1150px) {
   .article .article-image {
     width: 30rem;
   }
@@ -414,7 +414,7 @@ a {
 }
 
 .comments {
-  color: var(--orange-500);
+  color: var(--orange-600);
 }
 
 .aside,
@@ -473,10 +473,43 @@ a {
   gap: var(--gap-xs);
 }
 
+.scroll-to-top {
+  width: 3.5rem;
+  height: 3.5rem;
+  background: var(--orange-600);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  right: 2%;
+  bottom: 2%;
+  cursor: pointer;
+  transform: scale(0);
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+  transition: all var(--transition5);
+}
+.scroll-to-top svg {
+  width: 2rem;
+  height: 2rem;
+  fill: var(--text-color);
+}
+
 .cancel-active {
   display: block;
 }
 
 .add-padding {
   padding: var(--gap-xs) 0;
+}
+
+.show-scroll-to-top {
+  transform: scale(1);
+  visibility: visible;
+  opacity: 1;
+  pointer-events: all;
+  z-index: 3;
 }

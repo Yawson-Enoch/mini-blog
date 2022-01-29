@@ -20,3 +20,19 @@ navToggler.addEventListener('click', () => {
 });
 const yearBox = document.querySelector('.year');
 yearBox.innerText = new Date().getUTCFullYear().toString();
+const scrollbtn = document.querySelector('.scroll-to-top');
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 100) {
+        scrollbtn.classList.add('show-scroll-to-top');
+    }
+    else {
+        scrollbtn.classList.remove('show-scroll-to-top');
+    }
+});
+scrollbtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth',
+    });
+});

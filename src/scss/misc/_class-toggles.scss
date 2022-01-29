@@ -5,3 +5,11 @@
 .add-padding {
   padding: var(--gap-xs) 0;
 }
+
+.show-scroll-to-top {
+  transform: scale(1);
+  visibility: visible;
+  opacity: 1;
+  pointer-events: all;
+  z-index: 3;
+}

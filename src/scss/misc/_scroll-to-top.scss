@@ -1,0 +1,28 @@
+@use '../abstracts' as *;
+
+.scroll-to-top {
+  width: 3.5rem;
+  height: 3.5rem;
+  background: var(--orange-600);
+  border-radius: $circle;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  right: 2%;
+  bottom: 2%;
+  cursor: pointer;
+  transform: scale(0);
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+  transition: all var(--transition5);
+
+  svg {
+    $size: 2rem;
+    width: $size;
+    height: $size;
+    fill: var(--text-color);
+  }
+}
