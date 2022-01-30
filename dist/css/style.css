@@ -97,6 +97,7 @@ body {
   justify-content: space-between;
   gap: var(--gap-md);
   line-height: 1.5;
+  opacity: 0.85;
 }
 
 h1,
@@ -134,6 +135,7 @@ ul {
 a {
   display: block;
   text-decoration: none;
+  font-weight: 700;
 }
 
 h1 {
@@ -499,11 +501,7 @@ a {
 }
 
 .cancel-active {
-  display: block;
-}
-
-.add-padding {
-  padding: var(--gap-xs) 0;
+  display: flex;
 }
 
 .show-scroll-to-top {

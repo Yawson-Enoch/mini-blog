@@ -18,7 +18,7 @@ navToggler.addEventListener('click', () => {
     hamburgerBtn.style.display = 'none';
   } else {
     headerNav.style.height = '0px';
-    hamburgerBtn.style.display = 'block';
+    hamburgerBtn.style.display = 'flex';
   }
 });
 

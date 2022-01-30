@@ -15,7 +15,7 @@ navToggler.addEventListener('click', () => {
     }
     else {
         headerNav.style.height = '0px';
-        hamburgerBtn.style.display = 'block';
+        hamburgerBtn.style.display = 'flex';
     }
 });
 const yearBox = document.querySelector('.year');
