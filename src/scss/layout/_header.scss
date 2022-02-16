@@ -55,9 +55,16 @@
   border-radius: var(--radius);
   transition: all var(--transition3);
 
-  &:hover {
+  &:active {
     color: var(--blue-300);
     background: var(--grey-700);
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      color: var(--blue-300);
+      background: var(--grey-700);
+    }
   }
 
   @include breakpoint() {
@@ -99,9 +106,16 @@
     text-align: center;
     text-transform: uppercase;
 
-    &:hover {
+    &:active {
       color: var(--blue-300);
       background: var(--grey-700);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--blue-300);
+        background: var(--grey-700);
+      }
     }
 
     @include breakpoint() {

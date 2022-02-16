@@ -16,9 +16,16 @@
     text-transform: uppercase;
     align-self: flex-start;
 
-    &:hover {
+    &:active {
       color: var(--blue-300);
       background: var(--grey-700);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--blue-300);
+        background: var(--grey-700);
+      }
     }
   }
 }
